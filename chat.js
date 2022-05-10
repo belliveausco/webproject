@@ -61,26 +61,27 @@ theForm.addEventListener("submit", function sendMsg(event) {
         
         //User types a message
         var oldmessage = blah.value;
+        var message = oldmessage.toLowerCase();
         var newsent = "";
-        var newmessage = oldmessage.split(" ");
-        const adverbs = ["lively", "unexpectedly", "wrongly", "foolishly"];
-        const verbs = ["run", "dodge", "jump", "eat", "play", "speak", "talk", "write", "like", "dislike"];
-        const adjectives = ["beautiful", "ugly",  "weird", "strange", "random"];
+        var newmessage = message.split(" ");
+        const adverbs = ["lively", "unexpectedly", "wrongly", "foolishly","secretly", "quickly", "closely", "deeply", "barely", "calmly", "rarely", "nearly", "very", "suddenly", "actually", "probably", "particulary", "directly", "really", "always", "usually", "quickly", "lively"];
+        const verbs = ["run", "dodge", "jump", "eat", "play", "speak", "talk", "write", "like", "dislike", "do", "ask", "buy", "hold", "leave", "learn", "open", "try", "think"];
+        const adjectives = ["beautiful", "ugly",  "weird", "strange", "random", "small", "big", "clean", "cheap", "dangerous", "useless", "stupid", "old", "young", "rich", "full", "high", "new", "simple", "single", "happy", "sad", "right", "strong", "light", "sweet", "fat", "dumb", "bright", "fun", "happy", "sunny", "cloudy", "dreary", "good"];
 
         for (let i = 0; i < newmessage.length; i++) {
             for (let j = 0; j < adverbs.length; j++) {
                 if (newmessage[i] == adverbs[j]) {
-                    newmessage[i] = adverbs[Math.round(Math.floor(Math.random() * 3))];
+                    newmessage[i] = adverbs[Math.round(Math.floor(Math.random() * 26))];
                 }
             }
             for (let k = 0; k < verbs.length; k++) {
                 if (newmessage[i] == verbs[k]) {
-                    newmessage[i] = verbs[Math.round(Math.floor(Math.random() * 10))];
+                    newmessage[i] = verbs[Math.round(Math.floor(Math.random() * 19))];
                 }
             }
             for (let l = 0; l < adjectives.length; l++) {
                 if (newmessage[i] == adjectives[l]) {
-                    newmessage[i] = adjectives[Math.round(Math.floor(Math.random() * 4))];
+                    newmessage[i] = adjectives[Math.round(Math.floor(Math.random() * 36))];
                 }
             } 
         }
